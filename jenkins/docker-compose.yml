@@ -1,29 +1,23 @@
-version: '3.6'
+version: '2'
 services:
   jenkins:
-    image: jenkins.nginx.docker:lts
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    container_name: jenkins
+    image: 'docker.io/bitnami/jenkins:2-debian-10'
     ports:
-      - '2022:22'
+      #- '80:8080'
+     # - '443:8443'
       - '50000:50000'
-      - '50022:50022'
     volumes:
-      - ./jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - 'jenkins_data:/bitnami/jenkins'
     environment:
       - VIRTUAL_HOST=jenkins.backendteam.xyz
       - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=jenkins.backendteam.xyz
       - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
-      - UID_JENKINS=${UID_JENKINS:-1000}
-      - GID_JENKINS=${GID_JENKINS:-1000}
-      - JENKINS_OPTS=${JENKINS_OPTS:-"--prefix=/jenkins"}
-    restart: always
     networks:
       - nginx-proxy-network
+volumes:
+  jenkins_data:
+    driver: local
 
 networks:
   nginx-proxy-network:
