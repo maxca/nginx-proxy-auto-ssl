@@ -2,6 +2,6 @@
 certs
 current
 nexus/nexus-data/*
-jenkins
+jenkins/jenkins_home
 gitlab/gitlab-data/*
 */logs
