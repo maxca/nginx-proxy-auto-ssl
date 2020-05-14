@@ -10,7 +10,7 @@ services:
       - 'jenkins_data:/bitnami/jenkins'
     environment:
       - VIRTUAL_HOST=jenkins.backendteam.xyz
-      - VIRTUAL_PORT=80
+      - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=jenkins.backendteam.xyz
       - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
     networks:
