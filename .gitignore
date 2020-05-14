@@ -1,0 +1,7 @@
+.idea
+certs
+current
+nexus/nexus-data/*
+jenkins
+gitlab/gitlab-data/*
+*/logs
