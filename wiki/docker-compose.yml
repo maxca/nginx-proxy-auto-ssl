@@ -12,8 +12,6 @@ services:
     restart: unless-stopped
     volumes:
       - db-data:/var/lib/postgresql/data
-    networks:
-      - nginx-proxy-network
   wiki:
     image: requarks/wiki:2
     depends_on:
