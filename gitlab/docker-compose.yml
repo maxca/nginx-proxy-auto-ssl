@@ -53,7 +53,7 @@ services:
       - TZ=Asia/Bangkok
       - GITLAB_TIMEZONE=Bangkok
 
-      - GITLAB_HTTPS=false
+      - GITLAB_HTTPS=true
       - SSL_SELF_SIGNED=true
 
       - GITLAB_HOST=gitlab.backendteam.xyz
