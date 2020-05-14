@@ -13,6 +13,8 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=jenkins.backendteam.xyz
       - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
+      - JENKINS_USERNAME=admin
+      - JENKINS_PASSWORD=admin
     networks:
       - nginx-proxy-network
 volumes:
