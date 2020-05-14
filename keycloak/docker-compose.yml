@@ -22,7 +22,7 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=keycloak.backendteam.xyz
       - LETSENCRYPT_EMAIL=email@keycloak.backendteam.xyz
-      - KEYCLOAK_FRONTEND_URL=https://keycloak.backendteam.xyz
+      - KEYCLOAK_FRONTEND_URL=//keycloak.backendteam.xyz
       - DB_VENDOR=POSTGRES
       - DB_ADDR=postgres
       - DB_DATABASE=keycloak
