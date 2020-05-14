@@ -1,10 +1,31 @@
-st-logagent:
-  image: 'sematext/logagent:latest'
-  environment:
-    - LOGS_TOKEN=2d8020d9-d740-4572-b870-f743d049c88e
-    - REGION=US
-  cap_add:
-    - SYS_ADMIN
-  restart: always
-  volumes:
-    - '/var/run/docker.sock:/var/run/docker.sock'
+# docker-compose.yml
+version: '3'
+services:
+  sematext-agent:
+    image: 'sematext/agent:latest'
+    environment:
+      - INFRA_TOKEN=5c7e8358-5cbd-4ac9-906f-3080aead87a2
+      - CONTAINER_TOKEN=fdc6ffe5-f092-4d1c-b7c6-85c02da6938c
+      - REGION=US
+    cap_add:
+      - SYS_ADMIN
+    restart: always
+    volumes:
+      - '/:/hostfs:ro'
+      - '/etc/passwd:/etc/passwd:ro'
+      - '/etc/group:/etc/group:ro'
+      - '/var/run/:/var/run/'
+      - '/sys/kernel/debug:/sys/kernel/debug'
+      - '/sys:/host/sys:ro'
+  st-logagent:
+    image: 'sematext/logagent:latest'
+    environment:
+      - LOGS_TOKEN=2d8020d9-d740-4572-b870-f743d049c88e
+      - REGION=US
+    cap_add:
+      - SYS_ADMIN
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+
+
