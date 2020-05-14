@@ -1,20 +1,5 @@
 version: '3.6'
 services:
-  nginx:
-    image: nginx:latest
-    container_name: nginx-gitlab
-    environment:
-      - VIRTUAL_HOST=gitlab.backendteam.xyz
-      - LETSENCRYPT_HOST=gitlab.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@gitlab.backendteam.xyz
-    volumes:
-      - ./nginx/gitlab.conf:/etc/nginx/conf.d/default.conf
-      - ./logs/nginx:/var/log/nginx
-    restart: always
-    networks:
-      - nginx-proxy-network
-    depends_on:
-      - gitlab
   redis:
     restart: always
     image: sameersbn/redis:4.0.9-2
@@ -50,6 +35,10 @@ services:
     networks:
       - nginx-proxy-network
     environment:
+      - VIRTUAL_HOST=gitlab.backendteam.xyz
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=gitlab.backendteam.xyz
+      - LETSENCRYPT_EMAIL=email@gitlab.backendteam.xyz
       - DEBUG=false
       - DB_ADAPTER=postgresql
       - DB_HOST=postgresql
