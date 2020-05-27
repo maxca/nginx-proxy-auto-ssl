@@ -3,7 +3,7 @@ services:
   jenkins:
     image: 'docker.io/bitnami/jenkins:2-debian-10'
     ports:
-      #- '80:8080'
+      - '80:8081'
      # - '443:8443'
       - '50000:50000'
     volumes:
@@ -13,8 +13,8 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=jenkins.backendteam.xyz
       - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
-      - JENKINS_USERNAME=admin
-      - JENKINS_PASSWORD=admin
+      #- JENKINS_USERNAME=admin
+      #- JENKINS_PASSWORD=1
     networks:
       - nginx-proxy-network
 volumes:
