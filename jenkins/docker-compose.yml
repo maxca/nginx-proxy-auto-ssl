@@ -3,7 +3,7 @@ services:
   jenkins:
     image: 'docker.io/bitnami/jenkins:2-debian-10'
     ports:
-      - '80:8081'
+      - '80:8082'
      # - '443:8443'
       - '50000:50000'
     volumes:
