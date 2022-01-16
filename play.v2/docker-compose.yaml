@@ -16,7 +16,7 @@ services:
       - ./src:/home/node/app
     expose:
       - "3000"
-    command: "yarn start"
+    command: bash -c "yarn install && yarn build && yarn start"
     networks:
       - nginx-proxy-network
 
