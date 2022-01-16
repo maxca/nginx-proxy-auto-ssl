@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    client:
+        image: nginx
+        ports:
+            - 8000:80
+        volumes:
+            - ./src:/usr/share/nginx/html
+        environment:
+            - VIRTUAL_HOST=play.projectmoonwalk.io
+            - VIRTUAL_PORT=80
+            - LETSENCRYPT_HOST=play.projectmoonwalk.io
+            - LETSENCRYPT_EMAIL=email@play.projectmoonwalk.io
+        networks:
+            - nginx-proxy-network
+
+networks:
+    nginx-proxy-network:
+        external: true
