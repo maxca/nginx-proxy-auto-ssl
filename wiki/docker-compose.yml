@@ -25,11 +25,11 @@ services:
       - DB_USER=wikijs
       - DB_PASS=wikijsrocks
       - DB_NAME=wiki
-      - VIRTUAL_HOST=wiki.backendteam.xyz
+      - VIRTUAL_HOST=wiki.projectmoonwalk.io
       - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=wiki.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@wiki.backendteam.xyz
-      - WIKI_HOST=https://wiki.backendteam.xyz:443 # Change hostname here if required
+      - LETSENCRYPT_HOST=wiki.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@wiki.projectmoonwalk.io
+      - WIKI_HOST=https://wiki.projectmoonwalk.io:443 # Change hostname here if required
     restart: unless-stopped
     ports:
       - "801:3000"

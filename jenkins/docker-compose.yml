@@ -9,10 +9,10 @@ services:
     volumes:
       - 'jenkins_data:/bitnami/jenkins'
     environment:
-      - VIRTUAL_HOST=jenkins.backendteam.xyz
+      - VIRTUAL_HOST=jenkins.projectmoonwalk.io
       - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=jenkins.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
+      - LETSENCRYPT_HOST=jenkins.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@jenkins.projectmoonwalk.io
       #- JENKINS_USERNAME=admin
       #- JENKINS_PASSWORD=1
     networks:

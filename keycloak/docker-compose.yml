@@ -18,11 +18,11 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     environment:
-      - VIRTUAL_HOST=keycloak.backendteam.xyz
+      - VIRTUAL_HOST=keycloak.projectmoonwalk.io
       - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=keycloak.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@keycloak.backendteam.xyz
-      - KEYCLOAK_FRONTEND_URL=https://keycloak.backendteam.xyz/auth
+      - LETSENCRYPT_HOST=keycloak.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@keycloak.projectmoonwalk.io
+      - KEYCLOAK_FRONTEND_URL=https://keycloak.projectmoonwalk.io/auth
       - DB_VENDOR=POSTGRES
       - DB_ADDR=postgres
       - DB_DATABASE=keycloak

@@ -14,10 +14,10 @@ services:
       - ./jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - VIRTUAL_HOST=jenkins.backendteam.xyz
+      - VIRTUAL_HOST=jenkins.projectmoonwalk.io
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=jenkins.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@jenkins.backendteam.xyz
+      - LETSENCRYPT_HOST=jenkins.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@jenkins.projectmoonwalk.io
       - UID_JENKINS=${UID_JENKINS:-1000}
       - GID_JENKINS=${GID_JENKINS:-1000}
       - JENKINS_OPTS=${JENKINS_OPTS:-"--prefix=/jenkins"}

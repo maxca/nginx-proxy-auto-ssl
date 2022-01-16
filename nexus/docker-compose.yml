@@ -4,10 +4,10 @@ services:
     image: sonatype/nexus3
     container_name: nexus
     environment:
-      - VIRTUAL_HOST=nexus.backendteam.xyz
+      - VIRTUAL_HOST=nexus.projectmoonwalk.io
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=nexus.backendteam.xyz
-      - LETSENCRYPT_EMAIL=email@nexus.backendteam.xyz
+      - LETSENCRYPT_HOST=nexus.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@nexus.projectmoonwalk.io
     volumes:
       - ./nexus-data:/nexus-data
     ports:
