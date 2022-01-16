@@ -1,0 +1,25 @@
+version: "2"
+services:
+  node:
+    image: "node:17"
+    user: "node"
+    working_dir: /home/node/app
+    ports:
+      - 3000:3000
+    environment:
+      - VIRTUAL_HOST=playv2.projectmoonwalk.io
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=playv2.projectmoonwalk.io
+      - LETSENCRYPT_EMAIL=email@playv2.projectmoonwalk.io
+      - NODE_ENV=production
+    volumes:
+      - ./src:/home/node/app
+    expose:
+      - "3000"
+    command: "yarn start"
+    networks:
+      - nginx-proxy-network
+
+networks:
+  nginx-proxy-network:
+    external: true
