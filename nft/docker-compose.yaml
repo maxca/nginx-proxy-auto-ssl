@@ -1,7 +1,7 @@
 version: "2"
 services:
   node:
-    image: "node:17"
+    build: ./
     user: "node"
     working_dir: /home/node/app
     ports:
@@ -11,12 +11,12 @@ services:
       - VIRTUAL_PORT=80
       - LETSENCRYPT_HOST=playv2.projectmoonwalk.io
       - LETSENCRYPT_EMAIL=email@playv2.projectmoonwalk.io
-      - NODE_ENV=production
+      - NODE_ENV=dev
     volumes:
-      - ./code:/home/node/app
+      - ./src:/home/node/app
     expose:
       - "3000"
-    command: bash -c "yarn install && yarn build && yarn start"
+    
     networks:
       - nginx-proxy-network
 
