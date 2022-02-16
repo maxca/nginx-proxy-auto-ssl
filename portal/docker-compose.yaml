@@ -11,6 +11,8 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
+    networks:
+     - nginx-proxy-network
     
   wordpress:
     depends_on:
@@ -30,7 +32,13 @@ services:
       VIRTUAL_PORT: 80
       LETSENCRYPT_HOST: portal.projectmoonwalk.io
       LETSENCRYPT_EMAIL: email@portal.projectmoonwalk.io
+    networks:
+     - nginx-proxy-network
       
 volumes:
   db_data: {}
   wordpress_data: {}
+
+networks:
+  nginx-proxy-network:
+    external: true
